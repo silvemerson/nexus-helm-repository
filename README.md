@@ -45,4 +45,11 @@ helm install --repo http://172.150.56.10:8081/repository/helm-repository/ super-
 
 ```
 
-https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/helm-repositories
+## Access APP
+
+```
+kubectl port-forward --address 0.0.0.0 pod/<PODNAME> 8080:8080
+```
+
+<img src="assents/supermario.gif" width="800" height="600" />
+
