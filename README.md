@@ -4,8 +4,8 @@
 
 Nome       | vCPUs | Memoria RAM | IP            | S.O.¹           | Script de Provisionamento²
 ---------- |:-----:|:-----------:|:-------------:|:---------------:| -----------------------------
-nexus-server       | 1     | 2048MB      | 172.150.56.10 | devopsbox/ubuntu-20.04 | 
-k3s    | 1     | 2048MB       | 172.150.56.20 | devopsbox/ubuntu-20.04 | 
+nexus-server       | 1     | 2048MB      | 172.150.56.10 | silvemerson/ubuntu-20-04-ansible | 
+k3s    | 1     | 2048MB       | 172.150.56.20 | silvemerson/ubuntu-20-04-ansible | 
 
 ```
 git clone https://github.com/silvemerson/nexus-helm-repository.git
