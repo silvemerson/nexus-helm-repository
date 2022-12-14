@@ -1,0 +1,6 @@
+name: super-mario
+description: A generated Helm Chart for docker-compose from Skippbox Kompose
+version: 0.0.1
+apiVersion: v1
+sources:
+home:
