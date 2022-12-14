@@ -16,21 +16,24 @@ vagrant up
 
 ```
 
-## Accessing the Helm repository
+##  K3s, setting KUBECONFIG
 
 ```
-helm repo add nexus http://192.168.88.20:8081/repository/helm-repository/ --username admin --password 4linux
-
-helm fetch nexus/super-mario
-
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
 
 ## Pushing Helm charts to Nexus
 
 ```
-helm package <chart_dir>
-curl -u <username>:<password> http://<host>:<port>/repository/<repository_name>/ --upload-file mysql-1.4.0.tgz -v
+helm package super-mario
+curl -u helm:helmpass http://172.150.56.10:8081/repository/helm-repository --upload-file super-mario-0.0.1.tgz -v
 
+```
+
+## Accessing the Helm repository
+
+```
+helm repo add super-mario http://172.150.56.10:8081/repository/helm-repository/ --username helm --password helmpass
 
 ```
 
@@ -38,8 +41,8 @@ curl -u <username>:<password> http://<host>:<port>/repository/<repository_name>/
 
 ```
 helm repo update
-helm install super-mario-helm nexus/super-mario  --version 0.0.1
+helm install --repo http://172.150.56.10:8081/repository/helm-repository/ super-mario super-mario 
 
-helm fetch nexus/super-mario --version 0.0.1
+```
 
 https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/helm-repositories
