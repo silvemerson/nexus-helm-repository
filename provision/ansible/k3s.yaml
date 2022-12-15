@@ -37,6 +37,11 @@
         owner: root
         group: root      
 
+    - name: Instala o helm
+      snap:
+        name: helm
+        classic: yes
+
     - name: Instalando k3s via script 
       command: sh /root/k3s.sh
 
